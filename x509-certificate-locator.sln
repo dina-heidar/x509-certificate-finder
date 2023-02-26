@@ -28,8 +28,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "certificates", "certificates", "{696B3A3E-E564-471D-89CE-0D0A35E6D034}"
 	ProjectSection(SolutionItems) = preProject
-		ecdsa.sh = ecdsa.sh
-		certificates\root.sh = certificates\root.sh
+		certificates\ecdsa.sh = certificates\ecdsa.sh
 		certificates\rsa.sh = certificates\rsa.sh
 	EndProjectSection
 EndProject
