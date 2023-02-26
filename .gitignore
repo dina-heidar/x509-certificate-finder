@@ -1,0 +1,5 @@
+/samples/ConsoleApp/obj
+/samples/ConsoleApp/bin
+/.vs
+/src/X509Finder/bin
+/src/X509Finder/obj
