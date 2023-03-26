@@ -22,7 +22,7 @@
 
 using System.Security.Cryptography.X509Certificates;
 
-namespace X509Finder
+namespace X509StoreFinder
 {
     public static class X509
     {
