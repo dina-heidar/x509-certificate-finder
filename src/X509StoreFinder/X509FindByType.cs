@@ -22,7 +22,7 @@
 
 using System.Security.Cryptography.X509Certificates;
 
-namespace X509Finder
+namespace X509StoreFinder
 {
     public class X509FindByType
     {
@@ -30,6 +30,12 @@ namespace X509Finder
         private readonly StoreName storeName;
         private readonly X509FindType x509FindType;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="X509FindByType"/> class.
+        /// </summary>
+        /// <param name="storeLocation">The store location.</param>
+        /// <param name="storeName">Name of the store.</param>
+        /// <param name="x509FindType">Type of the X509 find.</param>
         public X509FindByType(StoreLocation storeLocation, StoreName storeName, X509FindType x509FindType)
         {
             this.storeLocation = storeLocation;

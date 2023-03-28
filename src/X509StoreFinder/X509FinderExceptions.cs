@@ -22,7 +22,7 @@
 
 using System;
 
-namespace X509Finder
+namespace X509StoreFinder
 {
     internal class X509FinderExceptions : Exception
     {
