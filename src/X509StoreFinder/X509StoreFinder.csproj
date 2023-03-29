@@ -9,7 +9,7 @@
     <Nullable>disable</Nullable>
     <IsTrimmable>true</IsTrimmable>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <PackageTags>x509 pfx ecdsa rsa</PackageTags>
+    <PackageTags>x509certificate;security;certificate;pfx;ecdsa;rsa</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
     <Version>1.0.0-alpha</Version>   
