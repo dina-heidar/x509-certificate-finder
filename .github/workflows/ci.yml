@@ -42,9 +42,9 @@ jobs:
           nuget-version: latest
 
       - name: Push to MyGitHub
-       env:
-         GITHUB_NUGET_URL: https://nuget.pkg.github.com/dina-heidar/index.json
-         GITHUB_NUGET_API_KEY: ${{ secrets.GITHUB_TOKEN }}
-       run: dotnet nuget push ./artifacts/X509StoreFinder.*.nupkg -k $GITHUB_NUGET_API_KEY -s $GITHUB_NUGET_URL --skip-duplicate
+        env:
+           GITHUB_NUGET_URL: https://nuget.pkg.github.com/dina-heidar/index.json
+           GITHUB_NUGET_API_KEY: ${{ secrets.GITHUB_TOKEN }}
+        run: dotnet nuget push ./artifacts/X509StoreFinder.*.nupkg -k $GITHUB_NUGET_API_KEY -s $GITHUB_NUGET_URL --skip-duplicate
           
     
