@@ -46,11 +46,16 @@
 
   </PropertyGroup>
 
-
-  <PropertyGroup>
+<!--test locally-->
+  <!--<PropertyGroup>
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-  </PropertyGroup>
+  </PropertyGroup>-->
 
+
+
+  <!--There is a well known issue with the EmbedUntrackedSources 
+  attribute that could be fix with the below workaround needed for many 
+  SDK’s prior to 3.1.300 (At the moment I write this post 3.1.201)-->
   <PropertyGroup>
     <TargetFrameworkMonikerAssemblyAttributesPath>$([System.IO.Path]::Combine('$(IntermediateOutputPath)','$(TargetFrameworkMoniker).AssemblyAttributes$(DefaultLanguageSourceExtension)'))</TargetFrameworkMonikerAssemblyAttributesPath>
   </PropertyGroup>
@@ -58,18 +63,16 @@
     <!-- https://github.com/dotnet/sourcelink/issues/572 -->
     <EmbeddedFiles Include="$(GeneratedAssemblyInfoFile)"/>
   </ItemGroup>
-  <!--<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-  </PropertyGroup>-->
+  </PropertyGroup>
 
-  <!--<PropertyGroup>
-    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
-  </PropertyGroup>-->
-
+ 
   <ItemGroup>
     <None Include="README.md" Pack="true" PackagePath="\" />
   </ItemGroup>
 
+  <!--source link-->
   <ItemGroup>
     <SourceRoot Include="$(MSBuildThisFileDirectory)/" />
     <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
