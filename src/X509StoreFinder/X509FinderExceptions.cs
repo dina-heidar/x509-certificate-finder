@@ -20,19 +20,25 @@
 // SOFTWARE.
 //
 
-using System.Security.Cryptography.X509Certificates;
+using System;
 
-namespace X509Finder
+namespace X509StoreFinder
 {
-    public static class X509
+    internal class X509FinderExceptions : Exception
     {
         /// <summary>
-        /// The current user
+        /// Initializes a new instance of the <see cref="X509FinderExceptions"/> class.
         /// </summary>
-        public static X509StoreLocation CurrentUser = new X509StoreLocation(StoreLocation.CurrentUser);
+        /// <param name="message">The message that describes the error.</param>
+        public X509FinderExceptions(string message)
+            : base(message) { }
+
         /// <summary>
-        /// The local machine
+        /// Initializes a new instance of the <see cref="X509FinderExceptions"/> class.
         /// </summary>
-        public static X509StoreLocation LocalMachine = new X509StoreLocation(StoreLocation.LocalMachine);
+        /// <param name="message">The error message that explains the reason for the exception.</param>
+        /// <param name="innerException">The exception that is the cause of the current exception, or a null reference (<see langword="Nothing" /> in Visual Basic) if no inner exception is specified.</param>
+        public X509FinderExceptions(string message, Exception innerException)
+            : base(message, innerException) { }
     }
 }

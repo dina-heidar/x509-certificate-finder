@@ -22,13 +22,17 @@
 
 using System.Security.Cryptography.X509Certificates;
 
-namespace X509Finder
+namespace X509StoreFinder
 {
-
     public class X509StoreName
     {
         private readonly StoreLocation storeLocation;
         private readonly StoreName storeName;
+        /// <summary>
+        /// Initializes a new instance of the <see cref="X509StoreName"/> class.
+        /// </summary>
+        /// <param name="storeLocation">The store location.</param>
+        /// <param name="storeName">Name of the store.</param>
         public X509StoreName(StoreLocation storeLocation, StoreName storeName)
         {
             this.storeLocation = storeLocation;

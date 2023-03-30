@@ -20,16 +20,19 @@
 // SOFTWARE.
 //
 
-using System;
+using System.Security.Cryptography.X509Certificates;
 
-namespace X509Finder
+namespace X509StoreFinder
 {
-    internal class X509FinderExceptions : Exception
+    public static class X509
     {
-        public X509FinderExceptions(string message)
-            : base(message) { }
-
-        public X509FinderExceptions(string message, Exception innerException)
-            : base(message, innerException) { }
+        /// <summary>
+        /// The current user
+        /// </summary>
+        public static X509StoreLocation CurrentUser = new X509StoreLocation(StoreLocation.CurrentUser);
+        /// <summary>
+        /// The local machine
+        /// </summary>
+        public static X509StoreLocation LocalMachine = new X509StoreLocation(StoreLocation.LocalMachine);
     }
 }

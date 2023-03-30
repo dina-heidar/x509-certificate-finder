@@ -1,0 +1,84 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <Description>Find an ECDSA or RSA certificate from the certificate store. </Description>
+    <TargetFrameworks>net6.0;net7.0;netstandard2.0;netstandard2.1</TargetFrameworks>
+    <LangVersion>Latest</LangVersion>
+    <PackageId>X509StoreFinder</PackageId>
+    <RootNamespace>X509StoreFinder</RootNamespace>
+    <Nullable>disable</Nullable>
+    <IsTrimmable>true</IsTrimmable>
+    <GenerateDocumentationFile>true</GenerateDocumentationFile>
+    <PackageTags>x509certificate;security;certificate;pfx;ecdsa;rsa</PackageTags>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Version>1.0.3-alpha</Version>
+    <Authors>Dina Heidar</Authors>
+    <Company></Company>
+    <Product>X509StoreFinder</Product>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+    <AssemblyVersion>1.0.3.0</AssemblyVersion>
+    <FileVersion>1.0.3.0</FileVersion>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/dina-heidar/x509-certificate-finder</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/dina-heidar/x509-certificate-finder</RepositoryUrl>
+   
+    <NeutralLanguage>en</NeutralLanguage>
+    <PackageReleaseNotes>initial</PackageReleaseNotes>
+    <RepositoryType>Git</RepositoryType>
+    <Title>X509StoreFinder</Title>
+    <Copyright>Copyright Dina Heidar</Copyright>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+    <!-- Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+    <!-- Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- Embed source files that are not tracked by the source control manager in the PDB -->
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+    <Deterministic>true</Deterministic>
+    <!-- Recommended: Embed symbols containing Source Link in the main file (exe/dll) -->
+    <!--<DebugType>embedded</DebugType>--> 
+
+  </PropertyGroup>
+
+<!--test locally-->
+  <!--<PropertyGroup>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>-->
+
+
+
+  <!--There is a well known issue with the EmbedUntrackedSources 
+  attribute that could be fix with the below workaround needed for many 
+  SDK’s prior to 3.1.300 (At the moment I write this post 3.1.201)-->
+  <PropertyGroup>
+    <TargetFrameworkMonikerAssemblyAttributesPath>$([System.IO.Path]::Combine('$(IntermediateOutputPath)','$(TargetFrameworkMoniker).AssemblyAttributes$(DefaultLanguageSourceExtension)'))</TargetFrameworkMonikerAssemblyAttributesPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <!-- https://github.com/dotnet/sourcelink/issues/572 -->
+    <EmbeddedFiles Include="$(GeneratedAssemblyInfoFile)"/>
+  </ItemGroup>
+  <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>
+
+ 
+  <ItemGroup>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <!--source link-->
+  <ItemGroup>
+    <SourceRoot Include="$(MSBuildThisFileDirectory)/" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+</Project>

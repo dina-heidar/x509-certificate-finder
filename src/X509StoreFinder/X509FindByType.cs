@@ -22,7 +22,7 @@
 
 using System.Security.Cryptography.X509Certificates;
 
-namespace X509Finder
+namespace X509StoreFinder
 {
     public class X509FindByType
     {
@@ -30,6 +30,12 @@ namespace X509Finder
         private readonly StoreName storeName;
         private readonly X509FindType x509FindType;
 
+        /// <summary>
+        /// Initializes a new instance of the <see cref="X509FindByType"/> class.
+        /// </summary>
+        /// <param name="storeLocation">The store location.</param>
+        /// <param name="storeName">Name of the store.</param>
+        /// <param name="x509FindType">Type of the X509 find.</param>
         public X509FindByType(StoreLocation storeLocation, StoreName storeName, X509FindType x509FindType)
         {
             this.storeLocation = storeLocation;
@@ -45,7 +51,7 @@ namespace X509Finder
         /// <param name="hasPrivateKey">certificate has private key, if set to <c>true</c> [has private key].</param>
         /// <param name="isEcdsa">certificate is an ECDSA, if set to <c>true</c> [is ecdsa].</param>
         /// <returns></returns>
-        /// <exception cref="X509Finder.X509FinderExceptions">
+        /// <exception cref="X509StoreFinder.X509FinderExceptions">
         /// The certificate could not be found.
         /// or
         /// Multiple certificates were found, must only provide one.
@@ -53,7 +59,7 @@ namespace X509Finder
         /// The RSA certificate has no private key.
         /// or
         /// The ECDSA certificate has no private key.
-        /// </exception>
+        /// </exception>        
         public X509Certificate2 Find(string value,
             bool validOnly = true,
             bool hasPrivateKey = true,
