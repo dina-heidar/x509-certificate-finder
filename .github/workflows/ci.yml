@@ -37,7 +37,7 @@ jobs:
         run: dotnet clean ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG  
 
       - name: Build
-        run: dotnet clean ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG
+        run: dotnet build ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG
 
       - name: Pack X509StoreFinder
         run: dotnet pack ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG --no-build --include-source --include-symbols -o ./artifacts
