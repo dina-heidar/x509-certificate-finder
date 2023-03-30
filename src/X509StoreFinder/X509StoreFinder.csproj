@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-     <Description>Find an ECDSA or RSA certificate from the certificate store. </Description>
+    <Description>Find an ECDSA or RSA certificate from the certificate store. </Description>
     <TargetFrameworks>net6.0;net7.0;netstandard2.0;netstandard2.1</TargetFrameworks>
     <LangVersion>Latest</LangVersion>
     <PackageId>X509StoreFinder</PackageId>
@@ -12,23 +12,59 @@
     <PackageTags>x509certificate;security;certificate;pfx;ecdsa;rsa</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.0-alpha</Version>   
+    <Version>1.0.1-alpha</Version>
     <Authors>Dina Heidar</Authors>
     <Company></Company>
     <Product>X509StoreFinder</Product>
     <PackageReadmeFile>README.md</PackageReadmeFile>
-    <AssemblyVersion>1.0.0.0</AssemblyVersion>
-    <FileVersion>1.0.0.0</FileVersion>
+    <AssemblyVersion>1.0.1.0</AssemblyVersion>
+    <FileVersion>1.0.1.0</FileVersion>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageProjectUrl>https://github.com/dina-heidar/x509-certificate-finder</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dina-heidar/x509-certificate-finder</RepositoryUrl>
+   
     <NeutralLanguage>en</NeutralLanguage>
     <PackageReleaseNotes>initial</PackageReleaseNotes>
-    <RepositoryType>Git</RepositoryType>   
+    <RepositoryType>Git</RepositoryType>
+    <Title>X509StoreFinder</Title>
+    <Copyright>Copyright Dina Heidar</Copyright>
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+    <!-- Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
+    <PublishRepositoryUrl>true</PublishRepositoryUrl>
+
+    <!-- Build symbol package (.snupkg) to distribute the PDB containing Source Link -->
+    <IncludeSymbols>true</IncludeSymbols>
+    <SymbolPackageFormat>snupkg</SymbolPackageFormat>
+
+    <!-- Embed source files that are not tracked by the source control manager in the PDB -->
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
+
+    <Deterministic>true</Deterministic>
+    <!-- Recommended: Embed symbols containing Source Link in the main file (exe/dll) -->
+    <!--<DebugType>embedded</DebugType>--> 
+
   </PropertyGroup>
 
+
+  <!--<PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>-->
+
+  <!--<PropertyGroup>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+  </PropertyGroup>-->
+
   <ItemGroup>
-    <None Include="README.md" Pack="true" PackagePath="\"/>
+    <None Include="README.md" Pack="true" PackagePath="\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <SourceRoot Include="$(MSBuildThisFileDirectory)/" />
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers</IncludeAssets>
+    </PackageReference>
   </ItemGroup>
 
 </Project>

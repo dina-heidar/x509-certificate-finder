@@ -51,7 +51,7 @@ namespace X509StoreFinder
         /// <param name="hasPrivateKey">certificate has private key, if set to <c>true</c> [has private key].</param>
         /// <param name="isEcdsa">certificate is an ECDSA, if set to <c>true</c> [is ecdsa].</param>
         /// <returns></returns>
-        /// <exception cref="X509Finder.X509FinderExceptions">
+        /// <exception cref="X509StoreFinder.X509FinderExceptions">
         /// The certificate could not be found.
         /// or
         /// Multiple certificates were found, must only provide one.
@@ -59,7 +59,7 @@ namespace X509StoreFinder
         /// The RSA certificate has no private key.
         /// or
         /// The ECDSA certificate has no private key.
-        /// </exception>
+        /// </exception>        
         public X509Certificate2 Find(string value,
             bool validOnly = true,
             bool hasPrivateKey = true,
