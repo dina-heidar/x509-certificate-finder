@@ -30,8 +30,11 @@ jobs:
         with:
           dotnet-version: '6.0.x'
 
+      - name: Install Dependencies
+        run: dotnet restore
+
       - name: Clean
-        run: dotnet clean ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG
+        run: dotnet clean ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG  
 
       - name: Build
         run: dotnet clean ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG
