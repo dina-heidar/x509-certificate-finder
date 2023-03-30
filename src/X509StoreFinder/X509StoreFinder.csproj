@@ -61,7 +61,7 @@
   </PropertyGroup>
   <ItemGroup>
     <!-- https://github.com/dotnet/sourcelink/issues/572 -->
-    <EmbeddedFiles Include="$(GeneratedAssemblyInfoFile)"/>
+    <EmbeddedFiles Include="$(GeneratedAssemblyInfoFile)" />
   </ItemGroup>
   <PropertyGroup Condition="'$(GITHUB_ACTIONS)' == 'true'">
     <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
