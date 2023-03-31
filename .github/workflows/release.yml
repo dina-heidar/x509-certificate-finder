@@ -27,6 +27,9 @@ jobs:
         uses: actions/setup-dotnet@v1
         with:
           dotnet-version: '6.0.x'
+      
+      - name: Install Dependencies
+        run: dotnet restore
 
       - name: Clean
         run: dotnet clean ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG
@@ -34,7 +37,7 @@ jobs:
       - name: Build
         run: dotnet clean ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG
 
-      - name: Pack X509StoreFinder
+      - name: Pack 
         run: dotnet pack ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG --no-build --include-source --include-symbols -o ./artifacts
       
       - name: Setup nuget
