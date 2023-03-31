@@ -3,14 +3,16 @@ name: CI
 on:  
   push:
     branches:
-    - master
+    - main
   pull_request:
     branches:
-      - master
+      - main
   workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      BUILD_CONFIG: Release
 
     steps:
       - name: Checkout
@@ -28,11 +30,14 @@ jobs:
         with:
           dotnet-version: '6.0.x'
 
+      - name: Install Dependencies
+        run: dotnet restore
+
       - name: Clean
-        run: dotnet clean ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG
+        run: dotnet clean ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG  
 
       - name: Build
-        run: dotnet clean ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG
+        run: dotnet build ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG
 
       - name: Pack X509StoreFinder
         run: dotnet pack ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG --no-build --include-source --include-symbols -o ./artifacts
