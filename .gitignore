@@ -3,3 +3,10 @@
 /.vs
 /src/X509Finder/bin
 /src/X509Finder/obj
+/src/X509StoreFinder/bin
+/src/X509StoreFinder/obj
+/src/X509StoreFinder/NuGet/X509StoreFinder.1.0.1-alpha.nupkg
+/src/X509StoreFinder/NuGet/X509StoreFinder.1.0.1-alpha.snupkg
+/certificates/sub.example.org.key
+/certificates/sub1.example.org.key
+/src/X509StoreFinder/NuGet
