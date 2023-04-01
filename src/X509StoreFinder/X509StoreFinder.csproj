@@ -28,7 +28,6 @@
     <RepositoryType>Git</RepositoryType>
     <Title>X509StoreFinder</Title>
     <Copyright>Copyright Dina Heidar</Copyright>
-    <PublishRepositoryUrl>true</PublishRepositoryUrl>
 
     <!-- Publish the repository URL in the built .nupkg (in the NuSpec <Repository> element) -->
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
