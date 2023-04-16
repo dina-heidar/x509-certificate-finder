@@ -17,30 +17,18 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		README.md = README.md
 	EndProjectSection
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{EC70967D-8700-4A31-9B38-F813F877D68F}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{3F1D428B-1D7E-4D8F-9EA7-698A19B8EF55}"
-	ProjectSection(SolutionItems) = preProject
-		.github\workflows\build.yml = .github\workflows\build.yml
-	EndProjectSection
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "certificates", "certificates", "{696B3A3E-E564-471D-89CE-0D0A35E6D034}"
-	ProjectSection(SolutionItems) = preProject
-		certificates\ecdsa.sh = certificates\ecdsa.sh
-		certificates\rsa.sh = certificates\rsa.sh
-	EndProjectSection
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "X509StoreFinder", "src\X509StoreFinder\X509StoreFinder.csproj", "{AAA6E977-BAB8-4ED1-9DE6-6A62DA58FA6C}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{E442520C-D096-426E-9C43-D31D9DF7071C}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{7A15CC70-FB37-46DE-A8FF-E7F8D97A354B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{0684B2C8-EC53-49F9-8380-3C0ED76AAB86}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflows", "workflows", "{F64EA9AF-1EEE-40B5-84A5-A1809D1A4E5A}"
 	ProjectSection(SolutionItems) = preProject
 		.github\workflows\build.yml = .github\workflows\build.yml
 		.github\workflows\ci.yml = .github\workflows\ci.yml
 		.github\workflows\release.yml = .github\workflows\release.yml
 	EndProjectSection
 EndProject
+
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -61,10 +49,9 @@ Global
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{381CE74B-20D5-4089-9718-320EDCBE82F1} = {4312F9C6-C19B-4386-A239-7FEB9B5297D9}
-		{3F1D428B-1D7E-4D8F-9EA7-698A19B8EF55} = {EC70967D-8700-4A31-9B38-F813F877D68F}
 		{AAA6E977-BAB8-4ED1-9DE6-6A62DA58FA6C} = {618B2AAC-5B4E-402A-94E0-3322F09AA759}
-		{E442520C-D096-426E-9C43-D31D9DF7071C} = {CFF97A39-22B2-49C2-B20E-312A44574DCD}
-		{0684B2C8-EC53-49F9-8380-3C0ED76AAB86} = {E442520C-D096-426E-9C43-D31D9DF7071C}
+		{7A15CC70-FB37-46DE-A8FF-E7F8D97A354B} = {CFF97A39-22B2-49C2-B20E-312A44574DCD}
+		{F64EA9AF-1EEE-40B5-84A5-A1809D1A4E5A} = {7A15CC70-FB37-46DE-A8FF-E7F8D97A354B}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {753638CD-F0B7-435F-A8F0-AC082BA1F017}

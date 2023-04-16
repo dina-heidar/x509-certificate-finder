@@ -10,3 +10,4 @@
 /certificates/sub.example.org.key
 /certificates/sub1.example.org.key
 /src/X509StoreFinder/NuGet
+/src/X509StoreFinder/.AssemblyAttributes
