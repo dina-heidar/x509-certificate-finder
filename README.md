@@ -7,6 +7,10 @@ Find an ECDSA or RSA certificate from the certificate store.
 
 ## Install
 
+```
+dotnet add package X509StoreFinder
+```
+
 ## Usage
 
 ```csharp

@@ -1,3 +1,4 @@
+
 name: Release
 
 on:
@@ -33,6 +34,7 @@ jobs:
       - name: Build
         run: dotnet build ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG
 
+
       - name: Pack 
         run: dotnet pack ./src/X509StoreFinder/X509StoreFinder.csproj -c $BUILD_CONFIG --no-build --include-source --include-symbols -o ./artifacts
       
@@ -45,8 +47,8 @@ jobs:
         env:
            GITHUB_NUGET_URL: https://nuget.pkg.github.com/dina-heidar/index.json
            GITHUB_NUGET_API_KEY: ${{ secrets.GITHUB_TOKEN }}
-        run: dotnet nuget push ./artifacts/X509StoreFinder.*.nupkg -k $GITHUB_NUGET_API_KEY -s $GITHUB_NUGET_URL --skip-duplicate
-          
+        run: dotnet nuget push ./artifacts/X509StoreFinder.*.nupkg -k $GITHUB_NUGET_API_KEY -s $GITHUB_NUGET_URL --skip-duplicate          
+
       - name: Push to NuGet
         env:
          NUGET_URL: https://api.nuget.org/v3/index.json
