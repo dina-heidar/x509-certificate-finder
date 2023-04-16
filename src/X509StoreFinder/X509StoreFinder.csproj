@@ -12,9 +12,9 @@
     <PackageTags>x509certificate;security;certificate;pfx;ecdsa;rsa</PackageTags>
     <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
-    <Version>1.0.5</Version>
-    <AssemblyVersion>1.0.5.0</AssemblyVersion>
-    <FileVersion>1.0.5.0</FileVersion>
+    <Version>1.0.6</Version>
+    <AssemblyVersion>1.0.6.0</AssemblyVersion>
+    <FileVersion>1.0.6.0</FileVersion>
     <PackageIcon>images\icon_128x128.png</PackageIcon>
     <InformationalVersion>This is a release package</InformationalVersion>
     <Authors>Dina Heidar</Authors>
@@ -25,7 +25,7 @@
     <PackageProjectUrl>https://github.com/dina-heidar/x509-certificate-finder</PackageProjectUrl>
     <RepositoryUrl>https://github.com/dina-heidar/x509-certificate-finder</RepositoryUrl>
     <NeutralLanguage>en</NeutralLanguage>
-    <PackageReleaseNotes>new logo</PackageReleaseNotes>
+    <PackageReleaseNotes>logo</PackageReleaseNotes>
     <RepositoryType>Git</RepositoryType>
     <Title>X509StoreFinder</Title>
     <Copyright>Copyright Dina Heidar</Copyright>
